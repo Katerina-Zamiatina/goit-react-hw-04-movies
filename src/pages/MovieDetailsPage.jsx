@@ -42,7 +42,7 @@ const MovieDetailsPage = () => {
       {isLoading && (
         <Loader
           type="ThreeDots"
-          color="#00BFFF"
+          color="#4c4e59"
           height={80}
           width={80}
           className="Loader"

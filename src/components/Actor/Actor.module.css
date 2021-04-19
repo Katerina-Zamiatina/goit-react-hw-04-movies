@@ -30,3 +30,7 @@
   transform: scale(1.03);
   cursor: pointer;
 }
+
+.Name {
+  color: #4c4e59;
+}

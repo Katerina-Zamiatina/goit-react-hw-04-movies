@@ -1,5 +1,11 @@
 import { lazy, Suspense } from 'react';
-import { Switch, NavLink, Route, useRouteMatch } from 'react-router-dom';
+import {
+  Switch,
+  NavLink,
+  Route,
+  useRouteMatch,
+  useLocation,
+} from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
 import routes from '../../routes';
@@ -10,19 +16,41 @@ const Reviews = lazy(() =>
 );
 
 const MovieExtraInfo = () => {
+  const location = useLocation();
+
   const match = useRouteMatch();
   return (
     <>
       <section>
-        <h4>Additional information</h4>
+        <h4 className="ExtraTitle">Additional information</h4>
         <ul>
           <li>
-            <NavLink exact to={`${match.url}/cast`}>
+            <NavLink
+              activeStyle={{
+                fontWeight: 'bold',
+                color: '#2b2b2e',
+              }}
+              exact
+              to={{
+                pathname: `${match.url}/cast`,
+                state: { from: location.state?.from },
+              }}
+            >
               Cast
             </NavLink>
           </li>
           <li>
-            <NavLink exact to={`${match.url}/reviews`}>
+            <NavLink
+              activeStyle={{
+                fontWeight: 'bold',
+                color: '#2b2b2e',
+              }}
+              exact
+              to={{
+                pathname: `${match.url}/reviews`,
+                state: { from: location.state?.from },
+              }}
+            >
               Reviews
             </NavLink>
           </li>
@@ -31,7 +59,7 @@ const MovieExtraInfo = () => {
           fallback={
             <Loader
               type="ThreeDots"
-              color="#00BFFF"
+              color="#4c4e59"
               height={80}
               width={80}
               className="Loader"

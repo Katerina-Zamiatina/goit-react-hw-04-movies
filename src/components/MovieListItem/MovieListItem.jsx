@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import MovieExtraInfo from '../MovieExtraInfo';
+
 import defaultImg from '../../images/defaultImg.jpeg';
 
 const MovieListItem = ({ movie }) => {
@@ -23,14 +24,12 @@ const MovieListItem = ({ movie }) => {
   return (
     <article>
       <div className="MovieCard">
-        <div>
-          <img src={imgURL} alt={title} />
-        </div>
+        <img className="MoviePoster" src={imgURL} alt={title} />
         <div>
           <p className="MovieTitle">{`${title} (${year})`}</p>
-          <span className="MovieScore">User score : {userScore}%</span>
-          <p>Overview: {overview}</p>
-          <p>Genres: {movieGenres}</p>
+          <span className="Score">User score : {userScore}%</span>
+          <p className="MovieTitle">Overview: {overview}</p>
+          <p className="MovieTitle">Genres: {movieGenres}</p>
         </div>
       </div>
 

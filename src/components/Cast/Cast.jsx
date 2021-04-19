@@ -36,7 +36,7 @@ const Cast = () => {
       {isLoading && (
         <Loader
           type="ThreeDots"
-          color="#00BFFF"
+          color="#4c4e59"
           height={80}
           width={80}
           className="Loader"
@@ -53,7 +53,7 @@ const Cast = () => {
           })}
         </ul>
       ) : (
-        <p>No information about cast of this film</p>
+        <p className={styles.Name}>No information about cast of this film</p>
       )}
       {error && <h2>Something went wrong. Please try again later.</h2>}
     </Container>

@@ -1,8 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string';
 import PropTypes from 'prop-types';
 
 const Searchbar = ({ onSubmit }) => {
+  const { search } = useLocation();
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const searchQuery = queryString.parse(search);
+    if (searchQuery.query) {
+      setQuery(searchQuery.query);
+    }
+  }, [search]);
 
   const handleChange = e => {
     setQuery(e.target.value);
@@ -11,7 +21,6 @@ const Searchbar = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit(query);
-    setQuery('');
   };
 
   return (

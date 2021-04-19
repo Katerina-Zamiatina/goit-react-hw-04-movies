@@ -9,8 +9,11 @@ const Navigation = () => {
           <NavLink
             exact
             to={routes.home}
-            className="NavLink"
-            activeClassName="NavLink--active"
+            activeStyle={{
+              fontSize: 24,
+              fontWeight: 'bold',
+              color: '#2b2b2e',
+            }}
           >
             Home
           </NavLink>
@@ -19,7 +22,11 @@ const Navigation = () => {
           <NavLink
             to={routes.movies}
             className="NavLink"
-            activeClassName="NavLink--active"
+            activeStyle={{
+              fontSize: 24,
+              fontWeight: 'bold',
+              color: '#2b2b2e',
+            }}
           >
             Movies
           </NavLink>

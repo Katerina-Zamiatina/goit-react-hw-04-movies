@@ -50,22 +50,24 @@ const MovieSearchPage = () => {
   const shouldRenderBtn = movies.length > 0 && !isLoading;
 
   return (
-    <Container>
+    <div>
       <Searchbar onSubmit={onChangeQuery} />
-      {error && <p>Something went wrong: {error.message}</p>}
-      <h1>Search Results</h1>
-      <MovieList movies={movies} />
-      {isLoading && (
-        <Loader
-          type="ThreeDots"
-          color="#00BFFF"
-          height={80}
-          width={80}
-          className="Loader"
-        />
-      )}
-      {shouldRenderBtn && <LoadMoreButton onClick={fetchMovies} />}
-    </Container>
+      <Container>
+        {error && <p>Something went wrong: {error.message}</p>}
+        <h1 className="Title">Search Results</h1>
+        <MovieList movies={movies} />
+        {isLoading && (
+          <Loader
+            type="ThreeDots"
+            color="#4c4e59"
+            height={80}
+            width={80}
+            className="Loader"
+          />
+        )}
+        {shouldRenderBtn && <LoadMoreButton onClick={fetchMovies} />}
+      </Container>
+    </div>
   );
 };
 

@@ -10,10 +10,10 @@ const MoviePreview = ({ movie }) => {
   const year = release_date.slice(0, 4);
 
   return (
-    <div>
+    <div className="MovieCardPreview">
       <img className="MovieListItem-image" src={imgURL} alt="" />
       <p className="MovieTitle">{`${title}(${year})`}</p>
-      <span>{vote_average}</span>
+      <span className="MovieScore">{vote_average}</span>
     </div>
   );
 };

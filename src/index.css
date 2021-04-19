@@ -30,6 +30,11 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #4c4e59;
+}
+
 .App {
   display: grid;
   grid-template-columns: 1fr;
@@ -51,7 +56,7 @@ img {
   padding-top: 12px;
   padding-bottom: 12px;
   color: #fff;
-  background-color: #3f51b5;
+  background-color: #4c4e59;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
@@ -116,6 +121,12 @@ img {
   font-size: 18px;
 }
 
+.Title {
+  font-size: 28px;
+  color: #4c4e59;
+  margin-left: 50px;
+}
+
 /*
  * Стили компонента ImageGallery
  */
@@ -152,36 +163,72 @@ img {
   cursor: pointer;
 }
 
-.article {
-  padding-bottom: 20px;
+article {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .MovieCard {
   position: relative;
+  margin-left: 20px;
+  max-width: 1000px;
   display: flex;
 }
 
+.MovieCardPreview {
+  position: relative;
+}
+
+.MoviePoster {
+  height: 400px;
+  margin-right: 50px;
+  border-radius: 5px;
+}
+
 .MovieTitle {
+  font-weight: bold;
+  color: #4c4e59;
   margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 .MovieScore {
-  bottom: 15px;
-  left: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #2b2b2e;
+  background-color: rgba(205, 193, 193, 0.612);
+  z-index: 100;
+}
+
+.Score {
+  margin-left: 20px;
+  padding: 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #2b2b2e;
+  background-color: rgba(205, 193, 193, 0.612);
+}
+
+.ExtraTitle {
+  margin-left: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2b2b2e;
 }
 
 .Button {
-  margin: 0 auto;
+  margin-left: 50px;
   padding: 8px 16px;
   border-radius: 2px;
-  background-color: #3f51b5;
+  background-color: rgba(205, 193, 193, 0.612);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   display: inline-block;
-  color: #fff;
+  color: #2b2b2e;
   border: 0;
   text-decoration: none;
   cursor: pointer;
@@ -197,7 +244,8 @@ img {
 
 .Button:hover,
 .Button:focus {
-  background-color: #303f9f;
+  background-color: #4c4e59;
+  color: #fff;
 }
 
 .Loader {

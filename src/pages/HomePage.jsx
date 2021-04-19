@@ -26,7 +26,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>Trend Movies</h1>
+      <h1 className="Title">Trend Movies</h1>
       {trendMovies ? (
         <MovieList movies={trendMovies} />
       ) : (
@@ -35,7 +35,7 @@ const HomePage = () => {
       {isLoading && (
         <Loader
           type="ThreeDots"
-          color="#00BFFF"
+          color="#4c4e59"
           height={80}
           width={80}
           className="Loader"
